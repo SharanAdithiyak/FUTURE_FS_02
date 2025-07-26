@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelBazaar - Mini E-Commerce Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-shopping-bag text-indigo-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-indigo-600">PixelBazaar</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#" class="text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium">Home</a>
+                    <a href="products.html" class="text-gray-500 hover:text-indigo-600 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-indigo-400 text-sm font-medium">Products</a>
+                    <a href="#" id="categoriesNavBtn" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium">Categories</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium">About</a>
+                </div>
+                <div class="flex items-center">
+                    <button id="searchIconBtn" class="bg-gray-100 p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none">
+                        <i class="fas fa-search h-6 w-6"></i>
+                    </button>
+                    <button id="signinBtn" class="ml-3 px-4 py-1 rounded bg-gray-700 text-gray-200 hover:bg-indigo-600 font-semibold">Sign In</button>
+                    <button id="signupBtn" class="ml-2 px-4 py-1 rounded bg-indigo-600 text-white hover:bg-indigo-700 font-semibold">Sign Up</button>
+                    <span id="userEmail" class="ml-4 text-indigo-600 font-semibold hidden"></span>
+                    <button id="signoutBtn" class="ml-2 px-4 py-1 rounded bg-red-600 text-white hover:bg-red-700 font-semibold hidden">Sign Out</button>
+                    <button class="ml-3 bg-gray-100 p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none relative" aria-label="Shopping cart">
+                        <i class="fas fa-shopping-cart h-6 w-6"></i>
+                    </button>
+                    <button class="md:hidden ml-3 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                        <i class="fas fa-bars h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-diagonal-bg">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+                    <span class="block">Welcome to</span>
+                    <span class="block text-indigo-600">PixelBazaar</span>
+                </h1>
+                <p class="mt-3 max-w-md mx-auto text-base text-gray-800 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                    Discover amazing products at unbeatable prices. Your one-stop destination for quality shopping.
+                </p>
+                <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+                    <div class="rounded-md shadow">
+                        <a href="products.html" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                            Shop Now
+                        </a>
+                    </div>
+                    <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                        <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                            View Deals
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Why Choose PixelBazaar?
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+                    We're committed to providing you with the best shopping experience possible.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="pt-6">
+                    <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                        <div class="-mt-6">
+                            <div class="feature-icon bg-indigo-50 text-indigo-600 mx-auto">
+                                <i class="fas fa-truck text-2xl"></i>
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-center text-gray-900">Free Shipping</h3>
+                            <p class="mt-2 text-base text-center text-gray-600">
+                                Free delivery on orders above ₹4,000
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-6">
+                    <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                        <div class="-mt-6">
+                            <div class="feature-icon bg-green-50 text-green-600 mx-auto">
+                                <i class="fas fa-lock text-2xl"></i>
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-center text-gray-900">Secure Payment</h3>
+                            <p class="mt-2 text-base text-center text-gray-600">
+                                100% secure and encrypted transactions
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-6">
+                    <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                        <div class="-mt-6">
+                            <div class="feature-icon bg-blue-50 text-blue-600 mx-auto">
+                                <i class="fas fa-exchange-alt text-2xl"></i>
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-center text-gray-900">Easy Returns</h3>
+                            <p class="mt-2 text-base text-center text-gray-600">
+                                30-day hassle-free return policy
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <div id="categories-section" class="bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Shop by Category
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+                    Explore our wide range of products across different categories.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <!-- Electronics -->
+                <div class="category-card bg-white overflow-hidden shadow rounded-lg transition duration-300 ease-in-out">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Electronics">
+                    </div>
+                    <div class="px-4 py-5 sm:p-6">
+                        <h3 class="text-lg font-medium text-gray-900">Electronics</h3>
+                        <p class="mt-1 text-sm text-gray-600">Latest gadgets and tech accessories</p>
+                        <div class="mt-4 flex flex-col gap-2">
+                            <a href="products.html?category=Electronics" data-category="Electronics" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">View products <span aria-hidden="true">&rarr;</span></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Fashion -->
+                <div class="category-card bg-white overflow-hidden shadow rounded-lg transition duration-300 ease-in-out">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Fashion">
+                    </div>
+                    <div class="px-4 py-5 sm:p-6">
+                        <h3 class="text-lg font-medium text-gray-900">Fashion</h3>
+                        <p class="mt-1 text-sm text-gray-600">Trendy clothing and accessories</p>
+                        <div class="mt-4 flex flex-col gap-2">
+                            <a href="products.html?category=Fashion" data-category="Fashion" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">View products <span aria-hidden="true">&rarr;</span></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Home & Kitchen -->
+                <div class="category-card bg-white overflow-hidden shadow rounded-lg transition duration-300 ease-in-out">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://images.pexels.com/photos/324028/pexels-photo-324028.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Home & Kitchen">
+                    </div>
+                    <div class="px-4 py-5 sm:p-6">
+                        <h3 class="text-lg font-medium text-gray-900">Home & Kitchen</h3>
+                        <p class="mt-1 text-sm text-gray-600">Everything for your home</p>
+                        <div class="mt-4 flex flex-col gap-2">
+                            <a href="products.html?category=Home%20%26%20Kitchen" data-category="Home & Kitchen" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">View products <span aria-hidden="true">&rarr;</span></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Sports & Fitness -->
+                <div class="category-card bg-white overflow-hidden shadow rounded-lg transition duration-300 ease-in-out">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Sports & Fitness">
+                    </div>
+                    <div class="px-4 py-5 sm:p-6">
+                        <h3 class="text-lg font-medium text-gray-900">Sports & Fitness</h3>
+                        <p class="mt-1 text-sm text-gray-600">Gear up for an active lifestyle</p>
+                        <div class="mt-4 flex flex-col gap-2">
+                            <a href="products.html?category=Sports%20%26%20Fitness" data-category="Sports & Fitness" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">View products <span aria-hidden="true">&rarr;</span></a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="hidden fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+        <div class="bg-white dark:bg-gray-500 p-6 rounded shadow-lg w-full max-w-lg relative">
+            <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">Order Summary</h3>
+            <div id="orderSummary" class="bg-gray-50 dark:bg-gray-400 rounded p-4 mb-4">
+                <!-- Order items and total will be rendered here -->
+            </div>
+            <form id="checkoutForm" class="space-y-4">
+                <div class="flex gap-4">
+                    <div class="flex-1">
+                        <label class="block text-gray-700 dark:text-gray-200 mb-1">First Name</label>
+                        <input type="text" id="coFirstName" class="w-full p-2 rounded border border-gray-300" required />
+                    </div>
+                    <div class="flex-1">
+                        <label class="block text-gray-700 dark:text-gray-200 mb-1">Last Name</label>
+                        <input type="text" id="coLastName" class="w-full p-2 rounded border border-gray-300" required />
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex-1">
+                        <label class="block text-gray-700 dark:text-gray-200 mb-1">Email</label>
+                        <input type="email" id="coEmail" class="w-full p-2 rounded border border-gray-300" required />
+                    </div>
+                    <div class="flex-1">
+                        <label class="block text-gray-700 dark:text-gray-200 mb-1">Phone</label>
+                        <input type="tel" id="coPhone" class="w-full p-2 rounded border border-gray-300" required />
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-gray-700 dark:text-gray-200 mb-1">Address</label>
+                    <input type="text" id="coAddress" class="w-full p-2 rounded border border-gray-300" required />
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex-1">
+                        <label class="block text-gray-700 dark:text-gray-200 mb-1">City</label>
+                        <input type="text" id="coCity" class="w-full p-2 rounded border border-gray-300" required />
+                    </div>
+                    <div class="flex-1">
+                        <label class="block text-gray-700 dark:text-gray-200 mb-1">ZIP Code</label>
+                        <input type="text" id="coZip" class="w-full p-2 rounded border border-gray-300" required />
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-gray-700 dark:text-gray-200 mb-1">Delivery Instructions (optional)</label>
+                    <input type="text" id="coInstructions" class="w-full p-2 rounded border border-gray-300" />
+                </div>
+                <div>
+                    <label class="block text-gray-700 dark:text-gray-200 mb-1">Payment Method</label>
+                    <select id="coPayment" class="w-full p-2 rounded border border-gray-300">
+                        <option>Credit Card</option>
+                        <option>Debit Card</option>
+                        <option>UPI</option>
+                        <option>Cash on Delivery</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded font-semibold flex items-center justify-center gap-2 text-lg">
+                    <i class="fa fa-credit-card"></i> Complete Order
+                </button>
+            </form>
+            <button id="closeCart" class="absolute top-2 right-2 text-gray-400 hover:text-red-500 text-2xl">&times;</button>
+            <p id="checkoutMsg" class="text-green-600 text-center mt-4 hidden text-lg font-semibold">Thank you for your order! Your purchase was successful.</p>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="hidden fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+        <div class="bg-white p-8 rounded shadow-lg w-full max-w-md relative">
+            <button id="closeAuthModal" class="absolute top-2 right-2 text-gray-400 hover:text-red-500 text-2xl">&times;</button>
+            <div id="signupForm" class="hidden">
+                <h2 class="text-2xl font-bold mb-2 text-gray-900 text-left">Create Account</h2>
+                <p class="mb-4 text-gray-500">Join PixelBazaar and start your shopping journey</p>
+                <form id="formSignUp" class="space-y-4">
+                    <div class="flex gap-2">
+                        <input type="text" id="signupFirstName" class="w-1/2 p-2 rounded border border-gray-300" placeholder="First name" required />
+                        <input type="text" id="signupLastName" class="w-1/2 p-2 rounded border border-gray-300" placeholder="Last name" required />
+                    </div>
+                    <div class="relative">
+                        <input type="email" id="signupEmail" class="w-full p-2 rounded border border-gray-300 pl-10" placeholder="Enter your email" required />
+                        <span class="absolute left-3 top-3 text-gray-400"><i class="fa fa-envelope"></i></span>
+                    </div>
+                    <div class="relative">
+                        <input type="tel" id="signupPhone" class="w-full p-2 rounded border border-gray-300 pl-10" placeholder="Enter your phone number" required />
+                        <span class="absolute left-3 top-3 text-gray-400"><i class="fa fa-phone"></i></span>
+                    </div>
+                    <div class="relative">
+                        <input type="password" id="signupPassword" class="w-full p-2 rounded border border-gray-300 pl-10 pr-10" placeholder="Create a password" required />
+                        <span class="absolute left-3 top-3 text-gray-400"><i class="fa fa-lock"></i></span>
+                        <span class="absolute right-3 top-3 text-gray-400 cursor-pointer" id="toggleSignupPassword"><i class="fa fa-eye"></i></span>
+                    </div>
+                    <div class="relative">
+                        <input type="password" id="signupConfirmPassword" class="w-full p-2 rounded border border-gray-300 pl-10 pr-10" placeholder="Confirm your password" required />
+                        <span class="absolute left-3 top-3 text-gray-400"><i class="fa fa-lock"></i></span>
+                        <span class="absolute right-3 top-3 text-gray-400 cursor-pointer" id="toggleSignupConfirmPassword"><i class="fa fa-eye"></i></span>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded font-semibold">Sign Up</button>
+                </form>
+                <p class="mt-4 text-center text-gray-500">Already have an account? <a href="#" id="switchToSignin" class="text-indigo-600 hover:underline">Sign In</a></p>
+            </div>
+            <div id="signinForm">
+                <h2 class="text-2xl font-bold mb-2 text-gray-900 text-left">Welcome Back</h2>
+                <p class="mb-4 text-gray-500">Sign in to your account to continue shopping</p>
+                <form id="formSignIn" class="space-y-4">
+                    <div class="relative">
+                        <input type="email" id="signinEmail" class="w-full p-2 rounded border border-gray-300 pl-10" placeholder="Enter your email" required />
+                        <span class="absolute left-3 top-3 text-gray-400"><i class="fa fa-envelope"></i></span>
+                    </div>
+                    <div class="relative">
+                        <input type="password" id="signinPassword" class="w-full p-2 rounded border border-gray-300 pl-10 pr-10" placeholder="Enter your password" required />
+                        <span class="absolute left-3 top-3 text-gray-400"><i class="fa fa-lock"></i></span>
+                        <span class="absolute right-3 top-3 text-gray-400 cursor-pointer" id="toggleSigninPassword"><i class="fa fa-eye"></i></span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center text-gray-500 text-sm">
+                            <input type="checkbox" id="rememberMe" class="mr-2"> Remember me
+                        </label>
+                        <a href="#" class="text-indigo-600 hover:underline text-sm">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded font-semibold">Sign In</button>
+                </form>
+                <div class="my-4 flex items-center justify-center">
+                    <span class="border-b border-gray-300 w-1/4"></span>
+                    <span class="mx-2 text-gray-400 text-sm">Or continue with</span>
+                    <span class="border-b border-gray-300 w-1/4"></span>
+                </div>
+                <div class="flex gap-4 justify-center mb-4">
+                    <button class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded hover:bg-gray-100"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" class="w-5 h-5"> Google</button>
+                    <button class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded hover:bg-gray-100"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" class="w-5 h-5"> Facebook</button>
+                </div>
+                <p class="mt-2 text-center text-gray-500">Don't have an account? <a href="#" id="switchToSignup" class="text-indigo-600 hover:underline">Sign up</a></p>
+            </div>
+            <p id="authError" class="text-center text-red-500 mt-4 hidden"></p>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="bg-indigo-700">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 lg:py-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    Trusted by thousands of customers
+                </h2>
+                <p class="mt-3 text-xl text-indigo-200">
+                    Join our growing community of happy shoppers
+                </p>
+            </div>
+            <div class="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-4">
+                <div class="stats-item bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-white">10K+</div>
+                    <div class="mt-1 text-sm font-medium text-indigo-200">Happy Customers</div>
+                </div>
+                <div class="stats-item bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-white">500+</div>
+                    <div class="mt-1 text-sm font-medium text-indigo-200">Products</div>
+                </div>
+                <div class="stats-item bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-white">50+</div>
+                    <div class="mt-1 text-sm font-medium text-indigo-200">Categories</div>
+                </div>
+                <div class="stats-item bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-white">4.8</div>
+                    <div class="mt-1 text-sm font-medium text-indigo-200">Average Rating</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-indigo-50 rounded-lg shadow-xl overflow-hidden">
+                <div class="px-6 py-12 sm:p-16">
+                    <div class="max-w-xl mx-auto lg:max-w-none lg:flex lg:items-center lg:justify-between">
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                                Ready to Start Shopping?
+                            </h2>
+                            <p class="mt-3 text-lg text-gray-600">
+                                Join thousands of satisfied customers and discover amazing deals on quality products.
+                            </p>
+                        </div>
+                        <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+                            <div class="inline-flex rounded-md shadow">
+                                <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                                    Browse Products
+                                </a>
+                            </div>
+                            <div class="ml-3 inline-flex rounded-md shadow">
+                                <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+                                    Sign Up
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-8 px-4 overflow-hidden sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Shop</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">All Products</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">New Arrivals</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Deals & Offers</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Best Sellers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Customer Service</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Shipping Policy</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Returns & Refunds</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">About</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Our Story</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Connect With Us</h3>
+                    <div class="mt-4 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                    <div class="mt-6">
+                        <h4 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Newsletter</h4>
+                        <div class="mt-2 flex">
+                            <input type="email" placeholder="Your email" class="px-4 py-2 border border-gray-700 bg-gray-700 text-white rounded-l-md focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+                            <button class="px-4 py-2 bg-indigo-600 text-white rounded-r-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8">
+                <p class="mt-8 text-center text-base text-gray-400">&copy; 2024 PixelBazaar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

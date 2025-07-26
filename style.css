@@ -1,0 +1,41 @@
+/* Custom styles extracted from Untitled-1.html */
+.hero-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.text-glow {
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.stats-item {
+    transition: all 0.3s ease;
+}
+.stats-item:hover {
+    transform: scale(1.05);
+}
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+.feature-icon:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+.hero-diagonal-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+} 
