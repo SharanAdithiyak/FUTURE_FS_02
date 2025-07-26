@@ -38,7 +38,7 @@ Through this project, I gained hands-on experience with:
 
 🔗 Live Demo
 GitHub Repository
-(Add live deployment link here if hosted)
+https://sharanadithiyak.github.io/FUTURE_FS_02/
 
 
 
